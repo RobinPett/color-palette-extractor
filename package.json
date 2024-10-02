@@ -1,6 +1,6 @@
 {
   "name": "color-palette-extractor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Load image and extract palettes",
   "main": "index.js",
   "type": "module",
