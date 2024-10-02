@@ -1,7 +1,7 @@
 {
   "name": "color-palette-extractor",
   "version": "1.0.0",
-  "description": "Extract ",
+  "description": "Load image and extract palettes",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -34,9 +34,4 @@
       "<rootDir>/tests/setup.js"
     ]
   },
-  "jest-puppeteer": {
-    "launch": {
-      "headless": true
-    }
-  }
 }
