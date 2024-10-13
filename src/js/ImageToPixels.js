@@ -89,8 +89,6 @@ export class ImageToPixels {
     async #extractRgbaValues(context) {
         const imageData = context.getImageData(0, 0, this.#imageWidthInPx, this.#imageHeightInPx)
         const data = imageData.data
-
-        // const extractedRgbaValues = new Uint8ClampedArray(this.#imageWidthInPx * this.#imageHeightInPx)
         const extractedRgbaValues = []
 
         // Loop through rgba values in image data
