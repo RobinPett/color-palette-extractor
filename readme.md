@@ -2,7 +2,10 @@
 ### ⚠️ Disclaimer - Developed for a school project - Module will not be maintained
 
 ## Description
-Extracts color palettes from images to be used in a browser environment.
+Color-Palette-Extractor is a lightweight module that extracts colors from images frm a provided URL. The extracted colors are clumped together in a palette. The palette can be customized to extract more specific colors such as bright, dark or muted. 
+THis module is supposed to work in a browser environment with DOM access.
+
+
 - Enter a image URL, extract the pixels and generate color palettes in various styles.
 
 
@@ -27,7 +30,9 @@ Extracts color palettes from images to be used in a browser environment.
   // Specify pixel data and number of colors
   const palette = paletteExtractor.startExtraction(pixels, 10)
 
-  const extraxtedPalette = palette.getColorPalette()
+  // Returns array of objects
+  // [ {red green blue} ]
+  const extraxtedPalette = palette.getPalette()
 ```
 To get diffent palettes you can use:
 
@@ -49,10 +54,9 @@ body.append(paletteDiv)
 ```
 
 ## Example
-![example](https://raw.githubusercontent.com/RobinPett/color-palette-extractor/main/.readme/example.PNG)
+![example](.readme/example.PNG)
 
 ## Known issues
-- Generating palettes can be slow - optimizing needed
 - Image links can fail if the server has origin controll
 
 ## Upcoming Features

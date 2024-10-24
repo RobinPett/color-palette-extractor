@@ -1,4 +1,7 @@
-// Setup file for tests
+/**
+ * Setup file for tests
+ */
+
 import { mockImageData } from "./img/mockImageData"
 import { ImageToPixels } from "../src/js/ImageToPixels"
 
@@ -18,11 +21,11 @@ const mockCanvasContext = {
     }))
 }
 
-jest.spyOn(ImageToPixels.prototype, 'createImage').mockImplementation(() => {
+jest.spyOn(ImageToPixels.prototype, '_createImage').mockImplementation(() => {
     return new Promise((resolve) => {
         mockImage.onload()
         resolve(mockImage)
     })
 })
 
-jest.spyOn(ImageToPixels.prototype, 'createCanvasElement').mockReturnValue(mockCanvasContext)
+jest.spyOn(ImageToPixels.prototype, '_createCanvasElement').mockReturnValue(mockCanvasContext)

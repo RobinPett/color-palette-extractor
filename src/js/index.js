@@ -43,7 +43,7 @@ export class ColorPaletteExtractor {
         try {
             return new ColorPaletteFromPixels(pixels, numberOfColorsToExtract)
         } catch (error) {
-            console.error('Extracting color palettes failed: ' + error)
+            console.error('Extracting color palettes failed: ' + error) // TODO Throw error
         }
 
     }
@@ -76,7 +76,7 @@ export class ColorPaletteExtractor {
 
             return containerDiv
         } catch (error) {
-            console.error('Presenting color palettes failed: ' + error)
+            console.error('Presenting color palettes failed: ' + error) // TODO Throw error
         }
 
     }

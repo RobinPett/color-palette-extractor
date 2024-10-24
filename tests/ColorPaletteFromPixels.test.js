@@ -13,14 +13,14 @@ describe('ColorPaletteFromPixels class test', () => {
 
     test('Reduce large image', () => {
         const colorPaletteFromPixels = new ColorPaletteFromPixels(largeTestImage, numberOfColorsToExtract)
-        const extractedColors = colorPaletteFromPixels.getColorPalette()
-        const rgbaValues = colorPaletteFromPixels.getRgbaValues()
-        expect(largeTestImage.length).toBeGreaterThan(rgbaValues.length)
+        const extractedColors = colorPaletteFromPixels.getPalette()
+        const pixels = colorPaletteFromPixels.getPixels()
+        expect(largeTestImage.length).toBeGreaterThan(pixels.length)
     })
 
     test('Get 3 dominant colors from pixel data', () => {
         const colorPaletteFromPixels = new ColorPaletteFromPixels(testImage, numberOfColorsToExtract)
-        const extractedColors = colorPaletteFromPixels.getColorPalette()
+        const extractedColors = colorPaletteFromPixels.getPalette()
         expect(extractedColors.length).toBe(3)
         expect(typeof extractedColors[0]).toBe('object')
     })
