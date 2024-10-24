@@ -332,6 +332,7 @@ export class ColorPaletteFromPixels {
 
     #getColorPalette() {
         this.#numberOfColorsToExtract = this.#originalPaletteLength
+        this.#numberOfMissingColors = 0 // Reset for this extraction
         this.#extractProminentColors()
 
         const colors = this.#getExtractedColors()
