@@ -1,6 +1,6 @@
 {
   "name": "color-palette-extractor",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Extract color palettes from pixels in an image",
   "main": "src/js/index.js",
   "type": "module",

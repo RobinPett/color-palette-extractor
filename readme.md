@@ -54,7 +54,7 @@ body.append(paletteDiv)
 ```
 
 ## Example
-![example](.readme/example.PNG)
+![example](https://raw.githubusercontent.com/RobinPett/color-palette-extractor/main/.readme/example.PNG)
 
 ## Known issues
 - Image links can fail if the server has origin controll
