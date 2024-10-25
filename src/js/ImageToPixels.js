@@ -1,3 +1,8 @@
+/**
+ * Extract pixels from images.
+ * A pixel represents red, green, blue and alpha values.
+ * https://en.wikipedia.org/wiki/RGB_color_model
+ */
 export class ImageToPixels {
     #imageURL
     #imageWidthInPx
@@ -56,7 +61,7 @@ export class ImageToPixels {
     }
 
     /**
-     * Extracts the red, green, blue and alpha values from an image.
+     * Extracts the red, green, blue and alpha values from an image - a pixel.
      *
      * @param {CanvasRenderingContext2D} context 
      */
@@ -65,7 +70,6 @@ export class ImageToPixels {
         const data = imageData.data
         const extractedRgbaValues = []
 
-        // Loop through rgba values in image data
         for (let i = 0; i < data.length; i += 4) {
             const red = data[i]
             const green = data[i + 1]

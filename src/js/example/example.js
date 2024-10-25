@@ -4,7 +4,7 @@
 
 import {ColorPaletteExtractor} from '../index.js'
 
-let imageURL = 'https://cdn.konst.se/konstverk/800/2501830840652.jpg'
+const imageURL = 'https://cdn.konst.se/konstverk/800/2501830840652.jpg'
 
 const paletteExtractor = new ColorPaletteExtractor()
 
@@ -16,14 +16,14 @@ const palette = paletteExtractor.startExtraction(pixels, 5)
 
 // Get seperate color palettes
 const extraxtedPalette = palette.getPalette()
-const darkPalette = palette.getDarkPalette()
-const brightPalette = palette.getBrightPalette()
-const mutedPalette = palette.getMutedPalette()
+// const darkPalette = palette.getDarkPalette()
+// const brightPalette = palette.getBrightPalette()
+// const mutedPalette = palette.getMutedPalette()
 
 const colorPaletteDiv = paletteExtractor.presentColorPalette(extraxtedPalette, 100)
-const darkPalettedDiv = paletteExtractor.presentColorPalette(darkPalette, 100)
-const brightPaletteDiv = paletteExtractor.presentColorPalette(brightPalette, 100)
-const mutedPaletteDiv = paletteExtractor.presentColorPalette(mutedPalette, 100)
+// const darkPalettedDiv = paletteExtractor.presentColorPalette(darkPalette, 100)
+// const brightPaletteDiv = paletteExtractor.presentColorPalette(brightPalette, 100)
+// const mutedPaletteDiv = paletteExtractor.presentColorPalette(mutedPalette, 100)
 
 // Create image
 const imageElement = document.createElement('img')
@@ -33,6 +33,6 @@ imageElement.src = imageURL
 const body = document.querySelector('body')
 body.append(imageElement)
 body.append(colorPaletteDiv)
-body.append(darkPalettedDiv)
-body.append(brightPaletteDiv)
-body.append(mutedPaletteDiv)
+// body.append(darkPalettedDiv)
+// body.append(brightPaletteDiv)
+// body.append(mutedPaletteDiv)

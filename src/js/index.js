@@ -28,7 +28,7 @@ export class ColorPaletteExtractor {
         try {
             return new ImageToPixels(url)
         } catch (error) {
-            console.error('Loading image failed: ' + error)
+            throw new Error('Loading image failed: ' + error)
         }
     }
 
@@ -43,7 +43,7 @@ export class ColorPaletteExtractor {
         try {
             return new ColorPaletteFromPixels(pixels, numberOfColorsToExtract)
         } catch (error) {
-            console.error('Extracting color palettes failed: ' + error) // TODO Throw error
+            throw new Error('Extracting color palettes failed: ' + error)
         }
 
     }
@@ -53,12 +53,12 @@ export class ColorPaletteExtractor {
      * Ignoring alpha channel. 
      * 
      * @param {Array} colorPalette - Array of color palette objects: { red, green, blue, alpha }
-     * @param {number} size - Size of each square div in px. 
+     * @param {number} colorSize - Size of each square div in px. 
      * @returns {HTMLDivElement} - Color Palette container div.
      */
-    presentColorPalette(colorPalette, size) {
+    presentColorPalette(colorPalette, colorSize) {
         try {
-            if (!size) size = 100
+            if (!colorSize) colorSize = 100
 
             const containerDiv = document.createElement('div')
             containerDiv.style.display = 'flex'
@@ -68,15 +68,15 @@ export class ColorPaletteExtractor {
             colorPalette.forEach((color) => {
                 const div = document.createElement('div')
                 div.style.backgroundColor = `rgb(${color.red}, ${color.green}, ${color.blue})`
-                div.style.height = `${size}px`
-                div.style.width = `${size}px`
+                div.style.height = `${colorSize}px`
+                div.style.width = `${colorSize}px`
 
                 containerDiv.appendChild(div)
             })
 
             return containerDiv
         } catch (error) {
-            console.error('Presenting color palettes failed: ' + error) // TODO Throw error
+            throw new Error('Presenting color palettes failed: ' + error)
         }
 
     }
